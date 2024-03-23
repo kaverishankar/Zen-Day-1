@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT_UPDATE</title>
+    <link rel="stylesheet" href="event.css">
+    <style>
+    img {
+    width : 250px;
+    height: 350px;
+    border-radius: 100%; 
+   overflow: hidden;
+   object-position: center;
+   padding : 10px;
+   border: 2px solid black;
+}
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <center>
+       <h1>EVENT_1</h1>
+       <h3>Number of available seats : <span id="out">25</span></h3>
+    </center>
+    <section class="content">
+        <div class="left_half">
+            <img src="concert.jpg">
+        </div>
+        <div class="right_half">
+            <form>
+                <label for="fname">Name :</label>
+                <input type="text" id="fname"><br>
+                <label for="email">Email :</label>
+                <input type="text" id="email"><br>
+                <label for="Phone">Phone no :</label>
+                <input type="text" pattern="[0-9]{10}" maxlength="10" id="phone"><br>
+                <label for = "num">Number of Seats : </label>
+                <select name="cars" id="num">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br>
+                <label for="atten">Name of the Attendee :</label>
+                <input type="text" id="atten"><br>
+                <br>
+                <center>
+                <button onclick="getOption()"> submit </button>
+                <button type ="reset"> cancel </button>
+                </center>
+            </form>
+        </div>
+    </section>
+<script type="text/javascript">
+    function getOption() {
+            selectElement = document.querySelector('#num');
+            total = 25;
+            output = selectElement.value;
+            output = total - output;
+            document.querySelector('#out').textContent = output;
+        }
+</script>
+</div>
+</body>
+
+</html>
