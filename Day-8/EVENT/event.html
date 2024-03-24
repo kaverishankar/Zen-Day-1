@@ -48,19 +48,19 @@
                 <input type="text" id="atten"><br>
                 <br>
                 <center>
-                <button onclick="getOption()"> submit </button>
+                <button onclick="javascript:btnClick()"> submit </button>
                 <button type ="reset"> cancel </button>
                 </center>
             </form>
         </div>
     </section>
-<script type="text/javascript">
-    function getOption() {
+<script>
+    let out = 25;
+    function btnClick() {
             selectElement = document.querySelector('#num');
-            total = 25;
-            output = selectElement.value;
-            output = total - output;
-            document.querySelector('#out').textContent = output;
+            out = out - selectElement.value;
+            document.getElementById('out').innerHTML = out;
+    return true
         }
 </script>
 </div>
